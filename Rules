@@ -3,7 +3,7 @@
 compile '/assets/less/*' do
   # Note:  built-in less filter not working properly
   #        using commandline filter instead
-  filter :bootstrap if @item.identifier.gsub('/static/less/','').chop == 'bootstrap'
+  filter :bootstrap if @item.identifier.gsub('/assets/less/','').chop == 'bootstrap'
 end
 
 compile '/assets/css/*' do
