@@ -4,7 +4,7 @@ class BootstrapFilter < Nanoc3::Filter
 
   def run(content, cmd, params={})
     puts "***** RUNNING SHELL CMD *****"
-    system "cd ./content/static/less; lessc ./bootstrap.less > .././css/bootstrap.css"
+    system "cd ./content/assets/less; lessc ./bootstrap.less > .././css/bootstrap.css"
   
   end
 
