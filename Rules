@@ -34,12 +34,18 @@ route '/assets/less/*/' do
 end
 
 compile '*' do
-  filter :erb
-  layout 'default'
+  if not item.binary?
+    filter :erb
+    layout 'default'
+  end
 end
 
 route '*' do
-  @item.identifier + 'index.html'
+  if item.binary?
+  	  item.identifier.chop + '.' + item[:extension]
+  else
+  	  @item.identifier + 'index.html'
+  end
 end
 
 layout '*', :erb
